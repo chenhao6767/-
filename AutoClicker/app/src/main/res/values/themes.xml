@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.AutoClicker" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <item name="colorPrimary">#00DC96</item>
+        <item name="colorPrimaryVariant">#009960</item>
+        <item name="colorOnPrimary">#000000</item>
+        <item name="colorSecondary">#00B4D8</item>
+        <item name="colorOnSecondary">#000000</item>
+        <item name="android:windowBackground">#060D12</item>
+    </style>
+</resources>

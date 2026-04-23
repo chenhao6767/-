@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#88000000">
+
+    <!-- Instruction bar at top -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|center_horizontal"
+        android:layout_marginTop="48dp"
+        android:text="点击屏幕任意位置抓取坐标"
+        android:textColor="#00DC96"
+        android:textSize="14sp"
+        android:fontFamily="monospace"
+        android:background="#CC0A1E2B"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp" />
+
+    <!-- Live coordinate display -->
+    <TextView
+        android:id="@+id/tv_coord"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|center_horizontal"
+        android:layout_marginBottom="80dp"
+        android:text="移动手指查看坐标"
+        android:textColor="#00DC96"
+        android:textSize="16sp"
+        android:fontFamily="monospace"
+        android:background="#CC060D12"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="10dp" />
+
+</FrameLayout>

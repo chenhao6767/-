@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#060D12"
+    android:padding="16dp">
+
+    <!-- ── Header ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:paddingBottom="10dp">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="AUTO CLICKER" android:textColor="#005530"
+                android:textSize="9sp" android:letterSpacing="0.3" android:fontFamily="monospace"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="循环点击器" android:textColor="#E0FFF2"
+                android:textSize="22sp" android:textStyle="bold"/>
+        </LinearLayout>
+        <TextView android:id="@+id/tv_status"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="○ 待机" android:textColor="#1A3025" android:textSize="12sp"
+            android:background="@drawable/bg_status" android:paddingHorizontal="12dp"
+            android:paddingVertical="6dp" android:fontFamily="monospace"/>
+    </LinearLayout>
+
+    <!-- ── Stats ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginBottom="10dp">
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical"
+            android:background="@drawable/bg_stat_card" android:padding="10dp"
+            android:layout_marginEnd="6dp">
+            <TextView android:id="@+id/tv_point_count" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0"
+                android:textColor="#00DC96" android:textSize="20sp"
+                android:textStyle="bold" android:fontFamily="monospace"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="坐标点" android:textColor="#0A4028" android:textSize="10sp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical"
+            android:background="@drawable/bg_stat_card" android:padding="10dp"
+            android:layout_marginEnd="6dp">
+            <TextView android:id="@+id/tv_loops" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0"
+                android:textColor="#00DC96" android:textSize="20sp"
+                android:textStyle="bold" android:fontFamily="monospace"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="循环次数" android:textColor="#0A4028" android:textSize="10sp"/>
+        </LinearLayout>
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical"
+            android:background="@drawable/bg_stat_card" android:padding="10dp">
+            <TextView android:id="@+id/tv_total_clicks" android:layout_width="wrap_content"
+                android:layout_height="wrap_content" android:text="0"
+                android:textColor="#00DC96" android:textSize="20sp"
+                android:textStyle="bold" android:fontFamily="monospace"/>
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="总点击" android:textColor="#0A4028" android:textSize="10sp"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- ── Speed control ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:background="@drawable/bg_stat_card" android:padding="10dp"
+        android:layout_marginBottom="10dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="速度  " android:textColor="#0A5030"
+            android:textSize="11sp" android:fontFamily="monospace"/>
+        <SeekBar android:id="@+id/sb_speed"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:max="4" android:progress="2"
+            android:thumbTint="#00DC96" android:progressTint="#00DC96"
+            android:secondaryProgressTint="#003020"/>
+        <TextView android:id="@+id/tv_speed_label"
+            android:layout_width="80dp" android:layout_height="wrap_content"
+            android:text="正常 ×1" android:textColor="#00DC96"
+            android:textSize="11sp" android:fontFamily="monospace"
+            android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- ── Repeat + reset ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="10dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="循环次数（0=无限）" android:textColor="#2A5040"
+            android:textSize="12sp" android:layout_marginEnd="8dp"/>
+        <EditText android:id="@+id/et_repeat"
+            android:layout_width="56dp" android:layout_height="wrap_content"
+            android:inputType="number" android:text="0" android:textColor="#00DC96"
+            android:textSize="14sp" android:fontFamily="monospace"
+            android:background="@drawable/bg_input"
+            android:paddingHorizontal="8dp" android:paddingVertical="4dp"
+            android:gravity="center"/>
+        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+        <Button android:id="@+id/btn_reset"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="重置" android:textSize="11sp" android:textColor="#1A4030"
+            android:background="@drawable/bg_btn_ghost"
+            android:paddingHorizontal="12dp" android:paddingVertical="6dp"/>
+    </LinearLayout>
+
+    <!-- ── Start / Stop ── -->
+    <Button android:id="@+id/btn_start"
+        android:layout_width="match_parent" android:layout_height="48dp"
+        android:text="▶ 开始运行" android:textColor="#000000"
+        android:textSize="15sp" android:textStyle="bold"
+        android:backgroundTint="#00DC96" android:layout_marginBottom="10dp"/>
+
+    <!-- ── Tabs ── -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:layout_marginBottom="8dp">
+        <TextView android:id="@+id/tab_coords"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="📍 坐标点击"
+            android:textColor="#00DC96" android:textSize="13sp"
+            android:gravity="center" android:paddingVertical="8dp"
+            android:background="@drawable/bg_tab_active"/>
+        <View android:layout_width="8dp" android:layout_height="1dp"/>
+        <TextView android:id="@+id/tab_images"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:text="🔍 图像识别"
+            android:textColor="#1A4030" android:textSize="13sp"
+            android:gravity="center" android:paddingVertical="8dp"
+            android:background="@drawable/bg_tab_inactive"/>
+    </LinearLayout>
+
+    <!-- ── PANEL: Coords ── -->
+    <LinearLayout android:id="@+id/panel_coords"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:orientation="horizontal" android:layout_marginBottom="8dp">
+            <Button android:id="@+id/btn_capture"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="⊕ 抓取坐标"
+                android:textColor="#00DC96" android:textSize="12sp"
+                android:backgroundTint="#0D1F18" android:layout_marginEnd="8dp"/>
+            <Button android:id="@+id/btn_add_manual"
+                android:layout_width="0dp" android:layout_height="wrap_content"
+                android:layout_weight="1" android:text="+ 手动添加"
+                android:textColor="#3A6050" android:textSize="12sp"
+                android:backgroundTint="#0A1510"/>
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_points"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!-- ── PANEL: Image tasks ── -->
+    <LinearLayout android:id="@+id/panel_images"
+        android:layout_width="match_parent" android:layout_height="0dp"
+        android:layout_weight="1" android:orientation="vertical"
+        android:visibility="gone">
+        <Button android:id="@+id/btn_add_image"
+            android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:text="+ 添加图像识别任务" android:textColor="#00DC96"
+            android:textSize="12sp" android:backgroundTint="#0D1F18"
+            android:layout_marginBottom="8dp"/>
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/rv_image_tasks"
+            android:layout_width="match_parent" android:layout_height="0dp"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+    <!-- ── Log ── -->
+    <TextView android:id="@+id/tv_log"
+        android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:text="" android:textColor="#0A6040" android:textSize="10sp"
+        android:fontFamily="monospace" android:minLines="2"
+        android:background="@drawable/bg_log" android:padding="8dp"
+        android:layout_marginTop="8dp"/>
+
+</LinearLayout>

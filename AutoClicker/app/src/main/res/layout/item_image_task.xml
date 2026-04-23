@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_image_task_card"
+    android:padding="12dp" android:layout_marginBottom="8dp">
+
+    <!-- Row 1: thumbnail + label + enable switch + delete -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <!-- Thumbnail -->
+        <FrameLayout android:layout_width="52dp" android:layout_height="52dp"
+            android:background="@drawable/bg_thumb" android:layout_marginEnd="10dp">
+            <ImageView android:id="@+id/iv_thumb"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:scaleType="centerCrop" android:visibility="gone"/>
+            <TextView android:id="@+id/tv_no_thumb"
+                android:layout_width="match_parent" android:layout_height="match_parent"
+                android:text="截图" android:textColor="#1A4030" android:textSize="10sp"
+                android:gravity="center" android:fontFamily="monospace"/>
+        </FrameLayout>
+
+        <!-- Label + status -->
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical">
+            <EditText android:id="@+id/et_img_label"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:background="@null" android:textColor="#A0F0D0" android:textSize="13sp"
+                android:hint="识别任务名" android:hintTextColor="#0A3020" android:singleLine="true"/>
+            <TextView android:id="@+id/tv_match_status"
+                android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="尚未匹配" android:textColor="#0A5030"
+                android:textSize="10sp" android:fontFamily="monospace"/>
+        </LinearLayout>
+
+        <!-- Enable switch -->
+        <Switch android:id="@+id/switch_enabled"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:checked="true" android:thumbTint="#00DC96"
+            android:trackTint="#0D2018" android:layout_marginHorizontal="4dp"/>
+
+        <ImageButton android:id="@+id/btn_img_delete"
+            android:layout_width="28dp" android:layout_height="28dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:background="@null" android:tint="#1A3025"/>
+    </LinearLayout>
+
+    <!-- Row 2: action spinner -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="匹配后 " android:textColor="#0A5030"
+            android:textSize="11sp" android:fontFamily="monospace"/>
+        <Spinner android:id="@+id/spin_action"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:backgroundTint="#1A00DC96" android:popupBackground="#0A1E18"/>
+    </LinearLayout>
+
+    <!-- Row 3: threshold -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="相似度 " android:textColor="#0A5030"
+            android:textSize="11sp" android:fontFamily="monospace"/>
+        <SeekBar android:id="@+id/sb_threshold"
+            android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:max="100"
+            android:thumbTint="#00DC96" android:progressTint="#00DC96"
+            android:layout_marginHorizontal="6dp"/>
+        <TextView android:id="@+id/tv_threshold_val"
+            android:layout_width="36dp" android:layout_height="wrap_content"
+            android:text="85%" android:textColor="#00DC96"
+            android:textSize="11sp" android:fontFamily="monospace" android:gravity="end"/>
+    </LinearLayout>
+
+    <!-- Row 4: cooldown + capture button -->
+    <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+        android:orientation="horizontal" android:gravity="center_vertical">
+        <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="冷却(秒) " android:textColor="#0A5030"
+            android:textSize="11sp" android:fontFamily="monospace"/>
+        <EditText android:id="@+id/et_cooldown"
+            android:layout_width="48dp" android:layout_height="wrap_content"
+            android:inputType="numberDecimal" android:text="2"
+            android:textColor="#60C090" android:textSize="12sp"
+            android:fontFamily="monospace" android:background="@drawable/bg_input"
+            android:paddingHorizontal="6dp" android:paddingVertical="3dp"
+            android:gravity="center" android:singleLine="true"/>
+        <View android:layout_width="0dp" android:layout_height="1dp" android:layout_weight="1"/>
+        <Button android:id="@+id/btn_img_capture"
+            android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="📷 截取图片" android:textSize="11sp"
+            android:textColor="#00DC96" android:backgroundTint="#0D1F18"
+            android:paddingHorizontal="10dp" android:paddingVertical="5dp"/>
+    </LinearLayout>
+
+</LinearLayout>

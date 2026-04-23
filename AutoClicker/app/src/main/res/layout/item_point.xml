@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/bg_point_card"
+    android:padding="12dp"
+    android:layout_marginBottom="8dp">
+
+    <!-- Row 1: index + label + delete -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="8dp">
+
+        <TextView
+            android:id="@+id/tv_index"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:gravity="center"
+            android:textColor="#2A5040"
+            android:textSize="11sp"
+            android:textStyle="bold"
+            android:fontFamily="monospace"
+            android:background="@drawable/bg_index_circle" />
+
+        <EditText
+            android:id="@+id/et_label"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginHorizontal="10dp"
+            android:background="@null"
+            android:textColor="#A0E0C0"
+            android:textSize="13sp"
+            android:hint="标签"
+            android:hintTextColor="#0A3020"
+            android:singleLine="true" />
+
+        <ImageButton
+            android:id="@+id/btn_delete"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@android:drawable/ic_menu_close_clear_cancel"
+            android:background="@null"
+            android:tint="#1A3025" />
+    </LinearLayout>
+
+    <!-- Row 2: X, Y, Delay inputs -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <!-- X -->
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical" android:layout_marginEnd="6dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="X" android:textColor="#0A5030" android:textSize="10sp"
+                android:fontFamily="monospace" android:layout_marginBottom="2dp"/>
+            <EditText android:id="@+id/et_x"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="number" android:textColor="#00DC96" android:textSize="14sp"
+                android:fontFamily="monospace" android:background="@drawable/bg_input"
+                android:paddingHorizontal="8dp" android:paddingVertical="5dp"
+                android:gravity="center" android:singleLine="true"/>
+        </LinearLayout>
+
+        <!-- Y -->
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1" android:orientation="vertical" android:layout_marginEnd="6dp">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="Y" android:textColor="#0A5030" android:textSize="10sp"
+                android:fontFamily="monospace" android:layout_marginBottom="2dp"/>
+            <EditText android:id="@+id/et_y"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="number" android:textColor="#00DC96" android:textSize="14sp"
+                android:fontFamily="monospace" android:background="@drawable/bg_input"
+                android:paddingHorizontal="8dp" android:paddingVertical="5dp"
+                android:gravity="center" android:singleLine="true"/>
+        </LinearLayout>
+
+        <!-- Delay -->
+        <LinearLayout android:layout_width="0dp" android:layout_height="wrap_content"
+            android:layout_weight="1.3" android:orientation="vertical">
+            <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+                android:text="延迟(ms)" android:textColor="#0A5030" android:textSize="10sp"
+                android:fontFamily="monospace" android:layout_marginBottom="2dp"/>
+            <EditText android:id="@+id/et_delay"
+                android:layout_width="match_parent" android:layout_height="wrap_content"
+                android:inputType="number" android:textColor="#60C090" android:textSize="14sp"
+                android:fontFamily="monospace" android:background="@drawable/bg_input"
+                android:paddingHorizontal="8dp" android:paddingVertical="5dp"
+                android:gravity="center" android:singleLine="true"/>
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

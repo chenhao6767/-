@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">循环点击器</string>
+    <string name="accessibility_service_label">循环点击器无障碍服务</string>
+    <string name="accessibility_service_description">用于在屏幕上自动执行循环点击及图像识别操作，不需要 ROOT 权限。</string>
+    <string name="overlay_permission_hint">请授予「显示在其他应用上层」权限以使用坐标抓取功能</string>
+    <string name="accessibility_permission_hint">请在无障碍设置中开启「循环点击器」服务</string>
+</resources>
